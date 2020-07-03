@@ -108,7 +108,7 @@ function userInstallation() {
       "whois_toggle": true
     }
   });
-  browser.tabs.create({ url: 'http://genesis.rf.gd/searchtools.html' });
+  browser.tabs.create({ url: '../pages/intro.html' });
 }
 
 function developmentInstallation() {
@@ -123,7 +123,7 @@ function developmentInstallation() {
       "whois_toggle": true
     }
   });
-  // browser.tabs.create({ url: 'popup/popup.html' });
+  browser.tabs.create({ url: '../pages/intro.html' });
 }
 
 function getDemoCollections() {

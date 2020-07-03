@@ -217,6 +217,8 @@ function initialize() {
     updateHtmlContent();
     document.getElementById("get_my_ip_btn")
         .addEventListener('click', getMyIp);
+    document.getElementById("reset-to-default-btn")
+        .addEventListener('click', resetToDefault);
     updateVersionText()
 }
 
@@ -244,6 +246,21 @@ function stringToDOM(htmlString) {
     // console.log(doc.firstChild.innerHTML); // => <a href="#">Link...
     // console.log(doc.firstChild.firstChild.innerHTML); // => Link
 };
+
+function resetToDefault() {
+    browser.storage.local.set({
+        collections: {},
+        settings: {
+            "tooltip_toggle": true,
+            "ont_toggle": true,
+            "ctc_toggle": true,
+            "so_toggle": true,
+            "atc_toggle": true,
+            "whois_toggle": true
+        }
+    });
+    initialize();
+}
 var show_tooltip_toggle_var = document
     .getElementById("show_tooltip_toggle");
 var show_ont_toggle_var = document
@@ -266,6 +283,7 @@ var my_nw_country_name_var = document
     .getElementById("my_nw_country_name");
 var my_nw_detail_var = document
     .getElementById("my_nw_detail");
+
 initialize();
 function gotError(err) {
     console.log(err);

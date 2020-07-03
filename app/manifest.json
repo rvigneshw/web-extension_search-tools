@@ -75,6 +75,7 @@
   ],
   "web_accessible_resources": [
     "images/*",
-    "styles/*"
+    "styles/*",
+    "scripts/*"
   ]
 }
