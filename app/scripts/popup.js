@@ -60,7 +60,9 @@ function updateHtmlContent() {
             var urlArray = localCollections[searchString];
             var accordionHeaderTag = `<div>
                     <a class="uk-accordion-title uk-animation-slide-top uk-animation-fast " href="#">
-                    <span uk-icon="tag"></span> 
+                    <span uk-icon="tag">
+                    <img src="${browser.extension.getURL('images/collections.svg')}" height="30px" width="30px"/>
+                    </span> 
                     ${searchString} 
                     <span class="uk-badge">${urlArray.length}</span>
                     </a>
@@ -73,7 +75,9 @@ function updateHtmlContent() {
                     </li>
                     `;
             urlArray.forEach(url => {
-                urlsInsideAccordion += `<li><span uk-icon="link"></span> ${url}</li>`;
+                urlsInsideAccordion += `<li><span uk-icon="link">
+                <a href="${url}" target="_blank" rel="noopener noreferrer">
+                <img src="${browser.extension.getURL('images/open_in_new_tab.svg')}" height="20px" width="20px"/></a></span> ${url}</li>`;
             });
             urlsInsideAccordion += `</ul></div>`;
             var accordionCloserTag = '</div>';
