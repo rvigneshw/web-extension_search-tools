@@ -12,6 +12,9 @@ function getMyIp() {
             my_nw_detail_var.innerText = data.detail
         });
 }
+function handleViewIntroPage() {
+    browser.tabs.create({ url: '../pages/intro.html' });
+}
 function updateHtmlContent() {
     collectionsSection.innerHTML = getRandomLoadingMessage();
     var collections_section_innerHtml = '';
@@ -223,6 +226,7 @@ function initialize() {
         .addEventListener('click', getMyIp);
     document.getElementById("reset-to-default-btn")
         .addEventListener('click', resetToDefault);
+    attachEventListenerTo("view_intro_btn", handleViewIntroPage);
     updateVersionText()
 }
 
